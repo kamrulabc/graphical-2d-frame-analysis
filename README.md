@@ -21,7 +21,7 @@ This project is licensed under the GPLv3 License. See the LICENSE file for detai
 
 
 
-GitHub tags: CSharp, Graphical, structural-analysis, 2D-frame-analysis,  civil-engineering.
+GitHub tags: Graphical 2D Frame Analysis C Sharp, civil-engineering, graphical structural analysis, open-source software, programming, language C#, C sharp, frame 2d, 2D frame, matrix method, computer method source, source code, Axial, shear, bending moment, displacement, diagram, spring support, portal frame, inclined roller support, absolute displacement, intermediate hinge, guided roller support
 
 
 ## Overview
