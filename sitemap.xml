@@ -1,6 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/</loc></url>
-  <url><loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/frame.html</loc></url>
-  <url><loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/calculations.html</loc></url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/</loc>
+  </url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/frame.html</loc>
+  </url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/calculations.html</loc>
+  </url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/documentation.html</loc>
+  </url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/about.html</loc>
+  </url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/contact.html</loc>
+  </url>
 </urlset>
-
