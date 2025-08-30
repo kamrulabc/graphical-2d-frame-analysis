@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+
   <!-- Main Pages -->
   <url>
     <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/</loc>
@@ -23,4 +23,27 @@
 
   <!-- Screenshots -->
   <url>
-    <loc>https://kamrulabc
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/images/SoftwareApplication_screenshot_1.png</loc>
+  </url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/images/SoftwareApplication_screenshot_2.png</loc>
+  </url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/images/SoftwareApplication_screenshot_3.png</loc>
+  </url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/images/SoftwareApplication_screenshot_4.png</loc>
+  </url>
+  <url>
+    <loc>https://kamrulabc.github.io/graphical-2d-frame-analysis/images/SoftwareApplication_screenshot_5.png</loc>
+  </url>
+
+  <!-- Downloads -->
+  <url>
+    <loc>https://github.com/kamrulabc/graphical-2d-frame-analysis/releases/download/1.0.0.1/Graphical_2D_Frame_Analysis_CSharp.msi</loc>
+  </url>
+  <url>
+    <loc>https://github.com/kamrulabc/graphical-2d-frame-analysis/archive/refs/tags/1.0.0.1.zip</loc>
+  </url>
+
+</urlset>
