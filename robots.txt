@@ -1,1 +1,5 @@
 
+User-agent: *
+Allow: /
+
+Sitemap: https://kamrulabc.github.io/graphical-2d-frame-analysis/sitemap.xml
