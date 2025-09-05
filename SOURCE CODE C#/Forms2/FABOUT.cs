@@ -48,10 +48,10 @@ namespace Graphical_2D_Frame_Analysis_CSharp
 Author
 Md. Kamrul Hassan
 •	B.Sc. in Civil Engineering, Bangladesh University of Engineering and Technology (BUET)
-•	Email:    kamrulabc@gmail.com
-•	GitHub:   github.com/kamrulabc
+•	Email: kamrulabc@gmail.com
+•	GitHub: github.com/kamrulabc
 •	LinkedIn: linkedin.com/in/md-k-hassan-8a996a378
-•   Youtube:  https://www.youtube.com/watch?v=INi5fiNNsJ8
+•   Youtube:https://www.youtube.com/watch?v=fk0E7cHiH8I
 
 It is designed for:
 - Civil & Structural Engineering students and teachers  

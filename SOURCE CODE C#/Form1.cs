@@ -1,96 +1,18 @@
 ﻿
-//Fixed Support=1
-//Pinned Support=2
-//Roller Support Y Restrained only=3 //X, MZ free, Y  restrained ROLLER-Y
-//Guided Support Y Restrained only=5 //Y, MZ free, X  restrained ROLLER-X
-//Spring support Y Direction =6
-//Inclined Roller Support Y Restrained only, rotation or angle of BASE of Support with GX degree anti-dock wise +ve=7
-
-//Sup_Node_Number_Type // string StringSuppData
-////======================================================
+//Author
+//Md. Kamrul Hassan
+//•	B.Sc. in Civil Engineering, Bangladesh University of Engineering and Technology (BUET)
+//•	Email: kamrulabc@gmail.com
+//•	GitHub: https://github.com/kamrulabc
+//•	LinkedIn: linkedin.com/in/md-k-hassan-8a996a378
+//•   Youtube:  https://www.youtube.com/watch?v=INi5fiNNsJ8
 
 
 
-//   K_FreeLeftRow_BC_Top_Col_Kff             K_FreeRightRow_BC_Top_Col_Kfs               XX     ff(YL)
-//----------------------------------------|-------------------------------------------- *---- =  -----
-//  K_BC_LeftBottom_Row_LeftBottomCol_Ksf   K_BC_LeftBottom_Row_BC_RightBottom_Col_Kss   dsup    fsup
+//License
+//This project is licensed under the GPLv3 License. 
 
 
-//dsup=Support_Displacement
-
-//Kff* XX  +  K_FreeRightRow_BC_Top_Col_Kfs*Support_Displacement=YL
-
-//or XX=(YL- K_FreeRightRow_BC_Top_Col_Kfs*Support_Displacement) *[INV(Kff)].....................(1)
-
-
-//K_BC_LeftBottom_Row_LeftBottomCol_Ksf*XX + K_BC_LeftBottom_Row_BC_RightBottom_Col_Kss*Support_Displacement=fsup..(2)
-
-
-
-
-//=============================================
-
-
-//T Global to Local axex    |	TT Local to Global axex		
-// c	s	0	            |	c	-s	0
-//-s	c	0	            |	s	c	0
-// 0	0	1	            |	0	0	1
-
-
-//f1 = f1'cosθ − f2'sinθ
-//f2 = f1'sinθ + f2'cosθ
-//f3 = f3'
-//f4 = f4'cosθ − f5'sinθ
-//f5 = f4'sinθ + f5'cosθ
-//f6 = f6'
-
-
-
-//U´= | cosθ sinθ|  |UGX  >>>>T Global to Local axex
-//V´ =|-sinθ cosθ|  |VGY
-//        T
-
-//UGX= |cosθ-sinθ|  |U´ >>>TT Local to Global axex	  
-//VGY= |sinθ cosθ|  |V´
-//         TT              >>>TT=  Inv(T)=Transpose (T)
-
-
-//T Global to Local axex	          |TT Local to Global axex	
-//Local force=T*Global force          |Global f= TT*f local
-//Local d=T*Global d                  |Global d= TT*d local
-
-//   kff   | kfs      | Df  |    | Ff |
-//---------|------- X |-----| =  |----| ALL GLOBAL AXEX
-//    ksf  |kss       | Ds  |    |Fs  |
-
-//TT Local to Global axex:	
-//double[,] TT = new double[,]
-//            {
-//    {c, -s, 0, 0, 0, 0},
-//    {s, c, 0, 0, 0, 0},
-//    {0, 0, 1, 0, 0, 0},
-//    {0, 0, 0, c, -s, 0},
-//    {0, 0, 0, s, c, 0},
-//    {0, 0, 0, 0, 0, 1}
-//};
-
-//T Global to Local axex: 
-//double[,] T = new double[,]
-//            {
-//    {c, s, 0, 0, 0, 0},
-//    {-s, c, 0, 0, 0, 0},
-//    {0, 0, 1, 0, 0, 0},
-//    {0, 0, 0, c, s, 0},
-//    {0, 0, 0, -s, c, 0},
-//    {0, 0, 0, 0, 0, 1}
-//};
-
-//c=cosθ,s=sinθ;  Kglobal​=TT Klocal T
-//TT=  Inv(T)=Transpose (T)
-//---------------------------------------------------------------
-//T Global to Local axex	          |TT Local to Global axex	
-//Local force=T*Global force          |Global f= TT*f local
-//Local d=T*Global d                  |Global d= TT*d local
 
 using System.Text;
 using System.IO;
