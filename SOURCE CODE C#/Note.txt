@@ -1,0 +1,7 @@
+Open Visual Studio 2019 > Open a Project or Solution > Run
+
+OR
+
+Open Visual Studio 2008 > Open a Solution > Run
+
+
