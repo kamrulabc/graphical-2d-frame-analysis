@@ -25,9 +25,7 @@ This project is licensed under the GPLv3 License. See the LICENSE file for detai
 
 Graphical 2D Frame Analysis HOME:
 https://kamrulabc.github.io/graphical-2d-frame-analysis/
-USE Download MSI Installer OR Download Source ZIP
-Open Visual Studio 2008 > Open Solution > Run
-
+Download MSI Installer OR Download Source ZIP. If both Visual Studio 2008 and Visual Studio 2019 are installed, Open Visual Studio 2008 > Open Solution > Run.
 
 
 GitHub tags: Graphical 2D Frame Analysis C Sharp, civil-engineering, graphical structural analysis, open-source software, programming, language C#, C sharp, frame 2d, 2D frame, matrix method, computer method source, source code, Axial, shear, bending moment, displacement, diagram, spring support, portal frame, inclined roller support, absolute displacement, intermediate hinge, guided roller support
