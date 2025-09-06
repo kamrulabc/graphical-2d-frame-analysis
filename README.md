@@ -23,6 +23,10 @@ Md. Kamrul Hassan
 License
 This project is licensed under the GPLv3 License. See the LICENSE file for details.
 
+Graphical 2D Frame Analysis HOME:
+https://kamrulabc.github.io/graphical-2d-frame-analysis/
+USE Download MSI Installer OR Download Source ZIP
+How to open and run SOURCE CODE from SOURCE_CODE_CSharp.zip: Download and unzip> Open Visual Studio 2019 > Open Solution > Run OR Open Visual Studio 2008 > Open Solution > Run
 
 
 
