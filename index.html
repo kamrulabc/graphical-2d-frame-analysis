@@ -92,18 +92,21 @@
 <section id="release-notes">
   <h2>Release Notes – v1.0.0.2</h2>
   <ul>
-  <li>Both C# VS 2008 .NET Framework 3.5 and C# VS 2019 .NET Framework 4.7.2 given in two folders</li>
-  <li>If both Visual Studio 2008 and Visual Studio 2019 are installed, Open Visual Studio 2008 > Open Solution > Run</li>
-    
+    <li>Both C# VS 2008 .NET Framework 3.5 and C# VS 2019 .NET Framework 4.7.2 versions are provided in two separate folders.</li>
+    <li>If both Visual Studio 2008 and Visual Studio 2019 are installed, open Visual Studio 2008, then open the solution and run the project.</li>
   </ul>
 </section>
 
 <section id="download">
   <h2>Download</h2>
 
-  <!-- Make sure MSI is attached to GitHub release v1.0.0.2 -->
-  <a class="download-btn" href="https://github.com/kamrulabc/graphical-2d-frame-analysis/releases/download/v1.0.0.2/Graphical_2D_Frame_Analysis_CSharp.msi" target="_blank">Download MSI</a>
-  <p class="download-note">Windows installer for v1.0.0.2</p>
+  <a class="download-btn" id="msi-download" href="#" target="_blank">
+    Download MSI (Latest)
+  </a>
+  <span id="latest-version" style="font-size:0.9em; color:#555; margin-left:10px;">
+    Loading version...
+  </span>
+  <p class="download-note">Installer for Windows OS – always points to the latest release</p>
 
   <a class="download-btn" href="https://github.com/kamrulabc/graphical-2d-frame-analysis/raw/main/SOURCE_CODE_CSharp.zip" target="_blank">Download Source ZIP</a>
   <p class="download-note">Full source code for study and modification</p>
@@ -113,7 +116,7 @@
   <h2>Changelog</h2>
   <ul>
     <li>v1.0.0.1 – Initial release (2025-08-31)</li>
-    <li>v1.0.0.2 – Updated version number (2025-09-07)</li>
+    <li>v1.0.0.2 – Updated source, fixed UI glitches, optimized calculations, updated installer (2025-09-07)</li>
   </ul>
 </section>
 
@@ -135,6 +138,27 @@
 <footer>
   &copy; 2025 Md. Kamrul Hassan | Graphical 2D Frame Analysis
 </footer>
+
+<script>
+  const apiUrl = "https://api.github.com/repos/kamrulabc/graphical-2d-frame-analysis/releases/latest";
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      const tagName = data.tag_name; // e.g., "v1.0.0.2"
+      const asset = data.assets.find(a => a.name.endsWith(".msi"));
+      if (asset) {
+        document.getElementById("msi-download").href = asset.browser_download_url;
+        document.getElementById("latest-version").textContent = `Latest version: ${tagName}`;
+      } else {
+        document.getElementById("latest-version").textContent = "MSI not found in latest release.";
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById("latest-version").textContent = "Could not load latest version.";
+    });
+</script>
 
 </body>
 </html>
