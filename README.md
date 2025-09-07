@@ -29,7 +29,7 @@ https://kamrulabc.github.io/graphical-2d-frame-analysis/
 Download MSI Installer OR Download Source ZIP. If both Visual Studio 2008 and Visual Studio 2019 are installed, Open Visual Studio 2008 > Open Solution > Run.
 
 
-GitHub tags: Graphical 2D Frame Analysis C Sharp, civil-engineering, graphical structural analysis, open-source software, programming, language C#, C sharp, frame 2d, 2D frame, matrix method, computer method source, source code, Axial, shear, bending moment, displacement, diagram, spring support, portal frame, inclined roller support, absolute displacement, intermediate hinge, guided roller support
+GitHub tags: GitHub tags: Graphical 2D Frame Analysis is a free and open-source structural engineering software for analyzing 2D frames, portal frames using stiffness and matrix method. The project is written in C#, C sharp and available with full source code on GitHub and SourceForge. Ideal for students, teachers in civil engineering and structural engineering, Educational, graphical structural analysis with full source code. Feature includes Axial, shear, bending moment, displacement, absolute displacement diagram, graph with values and table with values. It covers frame with spring support, inclined and guided roller support, intermediate hinge.
 
 
 ## Overview
