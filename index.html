@@ -63,21 +63,24 @@
 
     ul { padding-left: 20px; }
 
-    /* Responsive YouTube iframe */
+    /* Responsive video thumbnail container */
     .responsive-iframe {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      padding-bottom: 56.25%; /* 16:9 ratio */
       height: 0;
-      margin: 20px 0;
+      overflow: hidden;
+      border-radius: 10px;
     }
 
-    .responsive-iframe iframe {
+    .responsive-iframe img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      cursor: pointer;
       border: 0;
     }
 
@@ -172,12 +175,11 @@
 <section id="demo">
   <h2>Demo Video</h2>
   <div class="responsive-iframe">
-    <iframe src="https://www.youtube.com/embed/INi5fiNNsJ8" 
-            title="Graphical 2D Frame Analysis Demo"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-    </iframe>
+    <a href="https://www.youtube.com/watch?v=INi5fiNNsJ8" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/INi5fiNNsJ8/hqdefault.jpg" alt="Graphical 2D Frame Analysis Demo Video Thumbnail">
+    </a>
   </div>
+  <p style="font-size:0.9em; color:#555; text-align:center;">Tap to watch on YouTube</p>
 </section>
 
 <section id="screenshots">
