@@ -10,120 +10,25 @@
   <title>Graphical 2D Frame Analysis</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fafafa;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fafafa; color: #222; line-height: 1.6; }
+    header { background: #333; color: white; padding: 20px; text-align: center; }
     header h1 { margin: 0; font-size: 1.8em; }
     header p { margin: 5px 0 0; font-size: 1em; }
-
-    nav {
-      background: #444;
-      padding: 10px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      padding: 5px 0;
-    }
-
+    nav { background: #444; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 100; overflow-x: auto; white-space: nowrap; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; display: inline-block; padding: 5px 0; }
     nav a:hover { text-decoration: underline; }
-
-    section {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 30px 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
+    section { max-width: 900px; margin: 20px auto; padding: 30px 20px; background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     h2 { color: #333; margin-top: 0; }
     ul { padding-left: 20px; }
-
-    /* Responsive video thumbnail container */
-    .responsive-iframe {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    .responsive-iframe img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: pointer;
-      border: 0;
-    }
-
-    .screenshots {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .screenshots img {
-      width: 100%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #666;
-    }
-
-    .download-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #007bff;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      margin: 5px 10px 5px 0;
-    }
-
+    .responsive-iframe { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; }
+    .responsive-iframe img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; cursor: pointer; border: 0; }
+    .screenshots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .screenshots img { width: 100%; max-width: 400px; border: 1px solid #ccc; border-radius: 5px; }
+    footer { text-align: center; padding: 20px; margin-top: 30px; font-size: 0.9em; color: #666; }
+    .download-btn { display: inline-block; padding: 10px 20px; background: #007bff; color: white; border-radius: 5px; text-decoration: none; margin: 5px 10px 5px 0; }
     .download-btn:hover { background: #0056b3; }
-
     .download-note { font-size: 0.9em; color: #555; margin-bottom: 15px; }
-
-    @media (max-width: 600px) {
-      nav a { margin: 0 5px; font-size: 0.9em; }
-      section { padding: 20px 15px; }
-    }
+    @media (max-width: 600px) { nav a { margin: 0 5px; font-size: 0.9em; } section { padding: 20px 15px; } }
   </style>
 </head>
 <body>
@@ -157,7 +62,6 @@
     <a href="https://github.com/kamrulabc/graphical-2d-frame-analysis" target="_blank">GitHub</a> 
     and <a href="https://sourceforge.net/projects/graphical-2d-frame-analysis/" target="_blank">SourceForge</a>.
   </p>
-
   <p>
     The software is ideal for <strong>students and teachers</strong> in civil and structural 
     engineering. It is designed as an <strong>educational, graphical structural analysis tool</strong>, 
@@ -216,7 +120,7 @@
   <span id="latest-version" style="font-size:0.9em; color:#555; margin-left:10px;">Latest version: v1.0.0.2</span>
   <p class="download-note">Installer for Windows OS – always points to the latest release</p>
 
-  <a class="download-btn" id="source-download" href="#" target="_blank">
+  <a class="download-btn" id="source-download" href="https://github.com/kamrulabc/graphical-2d-frame-analysis/raw/main/SOURCE_CODE_CSharp.zip" target="_blank">
     Download Source ZIP (Latest)
   </a>
   <p class="download-note">Full source code for study and modification</p>
@@ -249,28 +153,6 @@
 </footer>
 
 <script>
-  const latestReleaseUrl = "https://api.github.com/repos/kamrulabc/graphical-2d-frame-analysis/releases/latest";
-
-  fetch(latestReleaseUrl)
-    .then(response => response.json())
-    .then(data => {
-      const tagName = data.tag_name;
-      document.getElementById("latest-version").textContent = `Latest version: ${tagName}`;
-
-      // MSI link stays static from SourceForge
-      // Source ZIP from GitHub
-      if (data.zipball_url) {
-        document.getElementById("source-download").href = data.zipball_url;
-      } else {
-        document.getElementById("source-download").textContent = "Source ZIP not found.";
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      document.getElementById("latest-version").textContent = "Could not load latest version.";
-      document.getElementById("source-download").textContent = "Could not load source ZIP.";
-    });
-
   const allReleasesUrl = "https://api.github.com/repos/kamrulabc/graphical-2d-frame-analysis/releases";
 
   fetch(allReleasesUrl)
