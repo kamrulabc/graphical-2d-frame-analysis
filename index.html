@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Md. Kamrul Hassan" />
-  <meta name="description" content="Graphical 2D Frame Analysis tool by Md. Kamrul Hassan. C#-based educational software for civil and structural engineering students and teachers. First-order linear frame analysis, global matrix assembly, graphical and tabular visualization of displacements, axial, shear, and bending moment diagrams. Supports multiple 2D frame structures with various types of supports. Open-source with source code." />
+  <meta name="description" content="Graphical 2D Frame Analysis is a free and open-source structural engineering software for analyzing 2D and portal frames using the stiffness and matrix method. Developed in C#, it provides full source code on GitHub and SourceForge. Features include axial, shear, bending moment, and displacement diagrams, with support for spring, roller, and hinge connections. Ideal for students and teachers in civil and structural engineering education." />
   <meta name="keywords" content="Graphical 2D Frame Analysis, C Sharp, C#, civil engineering, structural engineering, frame analysis, MSI download, GitHub release, open-source software, source code" />
   <link rel="canonical" href="https://kamrulabc.github.io/graphical-2d-frame-analysis/" />
   <title>Graphical 2D Frame Analysis</title>
@@ -27,6 +27,7 @@
     }
 
     header h1 { margin: 0; font-size: 1.8em; }
+    header p { margin: 5px 0 0; font-size: 1em; }
 
     nav {
       background: #444;
@@ -60,7 +61,6 @@
     }
 
     h2 { color: #333; margin-top: 0; }
-
     ul { padding-left: 20px; }
 
     /* Responsive video thumbnail container */
@@ -130,6 +130,7 @@
 
 <header>
   <h1>Graphical 2D Frame Analysis</h1>
+  <p>Free & Open-Source Structural Engineering Software – 2D Frame Analysis in C#</p>
   <p>by <strong>Md. Kamrul Hassan</strong></p>
 </header>
 
@@ -147,27 +148,32 @@
 </nav>
 
 <section id="about">
-  <h2>About This Project</h2>
-  <p><strong>Graphical 2D Frame Analysis</strong> is a <strong>C#-based</strong> educational software for civil and structural engineering students and teachers. It uses the <strong>Matrix Method</strong> for analyzing multiple 2D frame structures and provides graphical and tabular visualization of displacements, axial, shear, and bending moments. Ideal for learning, teaching, and experimentation.</p>
+  <h2>About Graphical 2D Frame Analysis</h2>
+  <p>
+    <strong>Graphical 2D Frame Analysis</strong> is a free and open-source 
+    <strong>structural engineering software</strong> for analyzing 2D frames and portal frames 
+    using the <strong>stiffness and matrix method</strong>. The project is written in 
+    <strong>C# (C Sharp)</strong> and is available with full source code on both 
+    <a href="https://github.com/kamrulabc/graphical-2d-frame-analysis" target="_blank">GitHub</a> 
+    and <a href="https://sourceforge.net/projects/graphical-2d-frame-analysis/" target="_blank">SourceForge</a>.
+  </p>
+
+  <p>
+    The software is ideal for <strong>students and teachers</strong> in civil and structural 
+    engineering. It is designed as an <strong>educational, graphical structural analysis tool</strong>, 
+    providing interactive visualization along with numerical results.
+  </p>
 </section>
 
 <section id="features">
   <h2>Features</h2>
   <ul>
-    <li>First-order linear structural frame graphical matrix analysis</li>
+    <li>Axial force, shear force, and bending moment diagrams</li>
+    <li>Displacement and absolute displacement diagrams</li>
+    <li>Graphical plots with values and corresponding result tables</li>
+    <li>Support for spring supports, inclined and guided roller supports, and intermediate hinges</li>
     <li>Assembly of global matrices for multi-member frames</li>
-    <li>Graphical and tabular visualization of displacements, axial, shear, and bending moment values</li>
-    <li>Supports multiple 2D frame structures with various types of supports:
-      <ul>
-        <li>Portal frames</li>
-        <li>Frames with spring supports</li>
-        <li>Frames with roller supports (inclined or guided)</li>
-        <li>Frames with intermediate hinges</li>
-        <li>Frames with absolute displacement constraints</li>
-      </ul>
-    </li>
-    <li>Developed in <strong>C#</strong> with an intuitive graphical interface</li>
-    <li>Open-source and suitable for civil/structural engineering education</li>
+    <li>Open-source C# implementation for learning and modification</li>
     <li>Windows OS compatible</li>
   </ul>
 </section>
@@ -204,10 +210,10 @@
 <section id="download">
   <h2>Download</h2>
 
-  <a class="download-btn" id="msi-download" href="#" target="_blank">
+  <a class="download-btn" id="msi-download" href="https://downloads.sourceforge.net/graphical-2d-frame-analysis/v1.0.0.2/Graphical2DFrameAnalysis_v1.0.0.2.msi" target="_blank">
     Download MSI (Latest)
   </a>
-  <span id="latest-version" style="font-size:0.9em; color:#555; margin-left:10px;">Loading version...</span>
+  <span id="latest-version" style="font-size:0.9em; color:#555; margin-left:10px;">Latest version: v1.0.0.2</span>
   <p class="download-note">Installer for Windows OS – always points to the latest release</p>
 
   <a class="download-btn" id="source-download" href="#" target="_blank">
@@ -249,18 +255,12 @@
     .then(response => response.json())
     .then(data => {
       const tagName = data.tag_name;
+      document.getElementById("latest-version").textContent = `Latest version: ${tagName}`;
 
-      const msiAsset = data.assets.find(a => a.name.endsWith(".msi"));
-      if (msiAsset) {
-        document.getElementById("msi-download").href = msiAsset.browser_download_url;
-        document.getElementById("latest-version").textContent = `Latest version: ${tagName}`;
-      } else {
-        document.getElementById("latest-version").textContent = "MSI not found in latest release.";
-      }
-
-      const sourceAsset = data.assets.find(a => a.name.endsWith(".zip"));
-      if (sourceAsset) {
-        document.getElementById("source-download").href = sourceAsset.browser_download_url;
+      // MSI link stays static from SourceForge
+      // Source ZIP from GitHub
+      if (data.zipball_url) {
+        document.getElementById("source-download").href = data.zipball_url;
       } else {
         document.getElementById("source-download").textContent = "Source ZIP not found.";
       }
