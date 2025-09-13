@@ -1,5 +1,6 @@
 name: GitHub Pages Deployment
 
+# Trigger on every push to main
 on:
   push:
     branches:
@@ -10,11 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout your repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Deploy directly to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./   # <- use root, not ./docs
+          publish_dir: ./      # <- your HTML/CSS files are in repo root
+          # Generate unique artifact name per run to avoid conflicts
+          artifact_name: gh-pages-artifact-${{ github.run_id }}
+          # Clean old files to prevent stale content
+          clean: true
