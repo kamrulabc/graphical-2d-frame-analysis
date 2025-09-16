@@ -1,6 +1,5 @@
 name: GitHub Pages Deployment
 
-# Trigger on every push to main
 on:
   push:
     branches:
@@ -9,19 +8,19 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1️⃣ Checkout your repo
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      # 2️⃣ Deploy directly to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./      # <- your HTML/CSS files are in repo root
-          # Generate unique artifact name per run to avoid conflicts
-          artifact_name: gh-pages-artifact-${{ github.run_id }}
-          # Clean old files to prevent stale content
-          clean: true
+          node-version: '18'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deployment Success
+        run: echo "GitHub Pages deployed successfully!"
