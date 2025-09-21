@@ -1,12 +1,14 @@
 name: GitHub Pages Deployment
 
+# Trigger workflow on push to main branch or manually
 on:
   push:
     branches:
-      - main  # triggers deployment on push to main
+      - main
+  workflow_dispatch:   # allows manual run from Actions tab
 
 permissions:
-  contents: read   # required to read repository contents
+  contents: read   # required to read repo files
   pages: write     # required to deploy to GitHub Pages
   id-token: write  # required for authentication
 
@@ -23,11 +25,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 3. Upload files for deployment
+      # 3. Upload Pages artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./   # deploy from root (where index.html is)
+          path: ./   # deploy from root where index.html lives
 
       # 4. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
