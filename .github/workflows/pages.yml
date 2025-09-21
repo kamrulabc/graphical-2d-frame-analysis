@@ -31,6 +31,17 @@ jobs:
         with:
           path: ./   # deploy from root where index.html lives
 
-      # 4. Deploy to GitHub Pages
+      # 4. Preview artifact files in logs (optional, can remove later)
+      - name: List uploaded artifact files
+        run: |
+          echo "Files in artifact:"
+          ls -R ./   # recursively list all files being uploaded
+
+      # 5. Check MSI link in index.html
+      - name: Check MSI link in index.html
+        run: |
+          grep "Graphical_2D_Frame_Analysis_CSharp.msi" index.html || echo "MSI link not found!"
+
+      # 6. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
