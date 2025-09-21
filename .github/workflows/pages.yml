@@ -1,28 +1,34 @@
 name: GitHub Pages Deployment
 
-# Trigger deployment on every push to main branch
 on:
   push:
     branches:
-      - main
+      - main  # triggers deployment on push to main
+
+permissions:
+  contents: read   # required to read repository contents
+  pages: write     # required to deploy to GitHub Pages
+  id-token: write  # required for authentication
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      # 1️⃣ Checkout your repository
+      # 1. Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Deploy directly to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./                 # HTML/CSS/images are in repo root
-          artifact_name: gh-pages-artifact-${{ github.run_id }}  # unique artifact name
-          clean: true                     # clean old files to prevent stale content
+      # 2. Configure GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      # 3️⃣ Confirmation message
-      - name: Deployment Success
-        run: echo "✅ GitHub Pages deployed successfully!"
+      # 3. Upload files for deployment
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./   # deploy from root (where index.html is)
+
+      # 4. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
