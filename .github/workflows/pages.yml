@@ -25,9 +25,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 3. Upload Pages artifact
+      # 3. Upload Pages artifact (updated to v2)
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./   # deploy from root where index.html lives
 
